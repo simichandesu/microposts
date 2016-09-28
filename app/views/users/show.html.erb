@@ -8,6 +8,8 @@
       </h1>
     </section>
   </aside>
+  
+  
   <div class="col-md-8">
     
 <%= render 'follow_form' if logged_in? %>
@@ -26,32 +28,14 @@
     
 <% end %>
 
+<P>
+  <%= link_to 'Followings', followings_user_path(@user) %>
+</P>
+<P>
+  <%= link_to 'Followers', followers_user_path(@user) %>
+</P>
+
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@following_users) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-   
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
-    <% end %>
-  </div>
-</div>
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@follower_users) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-   
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
-
-    <% end %>
-  </div>
-</div>
