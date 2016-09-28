@@ -35,6 +35,17 @@ class UsersController < ApplicationController
     end
   end
 
+#フォローしているユーザを表示するメソッド
+  def followings
+	  @user = User.following_relationships.find_by(followed_id: other_user.id)
+	  @following_users = @user.following_users.order(created_at: :desc)
+  end 
+#フォローされているユーザーを表示するメソッド
+  def followers
+	  @user = User.follower_relationships.find_by(follower_id: other_user.id)
+	  @follower_users = @user.follower_users.order(created_at: :desc)
+  end
+
   private
 
   def user_params
