@@ -19,7 +19,7 @@
         <br>
       <% @users.each do |user| %>
       <%= gravatar_for user %>
-      <%= link_to user.name, user_path %>
+      <%= link_to user.name, user_path(user) %>
       <br>
         <br>
         <br>
