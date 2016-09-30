@@ -1,0 +1,36 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+<%= gravatar_for @user %>
+<%= @user.name %>
+
+      </h1>
+    </section>
+  </aside>
+  
+ <aside class="col-md-8">  
+    <section class="user_info">
+      <h1>
+      <b>List of Followers</b>
+        <br>
+        <br>
+        <br>
+        <br>
+      <% @users.each do |user| %>
+      <%= gravatar_for user %>
+      <%= link_to user.name, user_path(user) %>
+      <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      <% end %>
+      </h1>
+    </section>
+  </aside>
+  
+  
+</div>
