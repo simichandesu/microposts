@@ -47,5 +47,6 @@ group :development do
   gem 'spring'
   gem 'carrierwave'
   gem 'rmagick', require: 'RMagick'
+  gem 'kaminari'
 end
 

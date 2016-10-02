@@ -21,10 +21,11 @@
       <ol class="microposts">
         
 <%= render @microposts %>
-
+<%= paginate @microposts %> 
       </ol>
-    
+
 <% end %>
+
 
 <P>
   <%= link_to 'followings', followings_user_path(@user) %>

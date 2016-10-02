@@ -10,4 +10,5 @@
 
 <span>
 <%= pluralize(current_user.microposts.count, "micropost") %>
+<%= paginate @microposts %> 
 </span>
