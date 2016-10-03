@@ -52,3 +52,4 @@ end
   gem 'carrierwave'
   gem 'rmagick', require: 'RMagick'
   gem 'kaminari'
+  gem 'cloudinary'

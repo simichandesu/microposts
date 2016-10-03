@@ -6,7 +6,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     include CarrierWave::RMagick
     
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.production?
+    include cloudinary::CarrierWave
+  else
+    storage :file
+  end
+  
   process convert: 'jpg'
   
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -21,5 +26,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_limit => [300, 300]
   end
+
+  def public_id
+    model.id
+  
 
 end

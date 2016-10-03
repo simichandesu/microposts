@@ -1,0 +1,6 @@
+<%= form_for(@micropost) do |f| %>
+  <%= image_tag @micropost.avatar.url if @micropost.image %>
+  <%= f.label :image] %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>
